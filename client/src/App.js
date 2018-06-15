@@ -107,8 +107,10 @@ class App extends Component {
 			this.state.gameOverMsg = "You clicked " + theScore + " before clicking the same one. Kind of a novice performance, keep practicing.";
 		}else if(theScore > 4 && theScore < 9){
 			this.state.gameOverMsg = "You clicked " + theScore + " before clicking the same one. Not bad, I've seen better but could be worse.";
-		}else if(theScore >= 9){
+		}else if(theScore >= 9 && theScore < 12){
 			this.state.gameOverMsg = "You clicked " + theScore + " before clicking the same one. Awesome, you're starting to get a hang of this.";
+		}else{
+			this.state.gameOverMsg = "You got them all! Good work!"
 		}
 	}
 
