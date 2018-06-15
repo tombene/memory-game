@@ -31,6 +31,10 @@ class App extends Component {
 		gameOverMsg: ""
 	};
 
+	// componentDidMount() {
+	// 	this.state.cards = 
+	// }
+
 	handleInputChange = event => {
 		// Destructure the name and value properties off of event.target
 		// Update the appropriate state
