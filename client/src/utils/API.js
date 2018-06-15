@@ -4,6 +4,6 @@ import axios from "axios";
 // It accepts a "query" or term to search the image api for
 export default {
   getImages: function(query) {
-    return axios.get("search/images", { params: { fields: 'id,thumb', exclude_nudity:true, page_size:12, phrase: query } });
+    return axios.get("api/images", { params: { fields: 'id,thumb', exclude_nudity:true, page_size:12, phrase: query } });
   }
 };

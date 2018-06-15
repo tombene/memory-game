@@ -8,7 +8,7 @@ const Nav = (props) => (
     </a>
 		<ul className="navbar-nav navbar-brand">
 			<li>
-				Score: {props.score}| Top Score: {props.topScore}
+				Score: {props.score} | Top Score: {props.topScore}
 			</li>
 		</ul>
   </nav>
