@@ -22,7 +22,10 @@ class App extends Component {
 			{ href: "https://i.annihil.us/u/prod/marvel/i/mg/3/50/537ba56d31087/standard_xlarge.jpg", imgId: 9 },
 			{ href: "https://i.annihil.us/u/prod/marvel/i/mg/2/60/537bcaef0f6cf/standard_xlarge.jpg", imgId: 10 },
 			{ href: "https://i.annihil.us/u/prod/marvel/i/mg/f/30/50fecad1f395b/standard_xlarge.jpg", imgId: 11 },
-			{ href: "https://i.annihil.us/u/prod/marvel/i/mg/6/80/5269608c1be7a/standard_xlarge.jpg", imgId: 12 }
+			{ href: "https://i.annihil.us/u/prod/marvel/i/mg/6/80/5269608c1be7a/standard_xlarge.jpg", imgId: 12 },
+			{ href: "https://i.annihil.us/u/prod/marvel/i/mg/1/c0/537ba2bfd6bab/standard_xlarge.jpg", imgId: 13 },
+			{ href: "https://i.annihil.us/u/prod/marvel/i/mg/3/60/537bc3836e152/standard_xlarge.jpg", imgId: 14 },
+			{ href: "https://i.annihil.us/u/prod/marvel/i/mg/f/e0/526166076a1d0/standard_xlarge.jpg", imgId: 15 }
 		],
 		valuesArray: [],
 		score: 0,
@@ -60,10 +63,10 @@ class App extends Component {
 		const clickVal = parseInt(event,10);
 		const indexVal = this.state.valuesArray.indexOf(clickVal);
 		//Check if it has already been clicked if not keep playing
-		return (indexVal === -1) ?  this.keepGoing(clickVal) : this.gameOver();
+		return (indexVal === -1) ?  this.uniqueClick(clickVal) : this.gameOver();
 	};
 
-	keepGoing = (clickVal) => {
+	uniqueClick = (clickVal) => {
 		const updatedArr = (this.state.valuesArray.concat(clickVal));
 		const shuffledArray = this.shuffleArray(this.state.cards);
 		const newScore = updatedArr.length;
@@ -107,7 +110,7 @@ class App extends Component {
 			this.state.gameOverMsg = "You clicked " + theScore + " before clicking the same one. Kind of a novice performance, keep practicing.";
 		}else if(theScore > 4 && theScore < 9){
 			this.state.gameOverMsg = "You clicked " + theScore + " before clicking the same one. Not bad, I've seen better but could be worse.";
-		}else if(theScore >= 9 && theScore < 12){
+		}else if(theScore >= 9 && theScore < this.state.cards.length){
 			this.state.gameOverMsg = "You clicked " + theScore + " before clicking the same one. Awesome, you're starting to get a hang of this.";
 		}else{
 			this.state.gameOverMsg = "You got them all! Good work!"
@@ -151,10 +154,10 @@ class App extends Component {
 								</Container>
 							</form>
 						</Col>
-					</Row> */}
+					</Row> 
 
 
-					{/* <h1>{this.state.imageSearch}</h1> */}
+					<h1>{this.state.imageSearch}</h1> */}
 
 
 					{this.state.cards.map((card, index) => {
